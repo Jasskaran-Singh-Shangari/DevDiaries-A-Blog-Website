@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This is the backend to a blog website.",
+  "keywords": [
+    "Blog",
+    "React",
+    "Backend",
+    "MERN",
+    "WebApplication"
+  ],
+  "license": "ISC",
+  "author": "REBEL-Osuda",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon -r dotenv/config src/index.js"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.9"
+  }
+}
