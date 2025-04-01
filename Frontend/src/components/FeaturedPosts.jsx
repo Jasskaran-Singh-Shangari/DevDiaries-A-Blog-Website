@@ -7,7 +7,7 @@ const FeaturedPosts = () => {
         {/* FIRST */}
         <div className='flex flex-col w-full gap-4 lg:w-1/2'>
             {/* Image */}
-            <Image src="Sunset1" className="rounded-3xl object-cover" />
+            <Image src="Sunset1" className="rounded-3xl object-cover" w="895" />
             {/* DETAILS */}
             <div className='flex flex-row items-center gap-4'>
                 <h1 className='font-semibold lg:text-lg '>01.</h1>

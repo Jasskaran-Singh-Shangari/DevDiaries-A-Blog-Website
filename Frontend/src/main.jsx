@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         element: <Write />,
       },
       {
-        path: "/singlepost",
+        path: "/test",
         element: <SinglePostPage />,
       },
       {
