@@ -8,7 +8,7 @@ import {
 } from "react-router";
 import {ClerkProvider} from "@clerk/clerk-react"
 import Homepage from './routes/Homepage.jsx';
-import PostList from './routes/PostList.jsx';
+import PostListPage from './routes/PostListPage.jsx';
 import Login from './routes/Login.jsx';
 import Register from './routes/Register.jsx';
 import Write from './routes/Write.jsx';
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/posts",
-        element: <PostList />,
+        element: <PostListPage />,
       },
       {
         path: "/write",
