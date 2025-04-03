@@ -54,5 +54,5 @@ npm run dev  # Start the backend server
 Feel free to fork this repository, open issues, or submit pull requests. Contributions are welcome! 😊
 
 ## 📢 Connect with Me
-💼 LinkedIn: [Your LinkedIn Profile]([https://www.linkedin.com/in/jasskaranshangari/])
+💼 LinkedIn: [https://www.linkedin.com/in/jasskaranshangari/]
 📧 Email: jasskarnsingh0007@gmail.com
