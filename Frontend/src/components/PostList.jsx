@@ -14,7 +14,7 @@ const PostList = () => {
     queryFn: ()=> fetchData() ,
   })
 
-
+  
   return (
     <div className='flex flex-col gap-8 mb-8'>
         <PostListItem />

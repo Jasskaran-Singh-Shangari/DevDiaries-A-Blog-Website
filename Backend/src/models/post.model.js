@@ -24,6 +24,11 @@ const postSchema=new Schema({
         type: String,
         required: true
     }, 
+    category:{
+        type: String,
+        required: true,
+        default: "general"
+    },
     content:{
         type: String,
         required: true
