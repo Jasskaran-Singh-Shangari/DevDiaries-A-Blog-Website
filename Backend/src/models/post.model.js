@@ -8,7 +8,7 @@ const postSchema=new Schema({
     },
     coverImage:{
         type: String,
-        required: true,
+        required: false,
         unique: false,
     },
     title:{
@@ -35,6 +35,11 @@ const postSchema=new Schema({
     visit:{
         type:Number,
         default: 0
+    }, 
+    slug:{
+        type: String,
+        required: true,
+        unique: true
     }
 
 }, {timestamps: true})

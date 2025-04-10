@@ -2,8 +2,21 @@ import React from 'react'
 import {useUser} from "@clerk/clerk-react"
 import 'react-quill-new/dist/quill.snow.css';
 import ReactQuill from "react-quill-new"
+import useMutation from "@tanstack/react-query"
 
 const Write = () => {
+
+  const mutation = useMutation({
+    mutationFn: async (newPost) => {
+      const token=await getToken()
+      return axios.post('/posts', newPost), {
+        headers:{
+          Authorization: `Bearer ${token}`
+        }
+      }
+    },
+  })
+
   const {isLoaded, isSignedIn}=useUser()
   if(!isLoaded) return (
     <div>
@@ -11,17 +24,22 @@ const Write = () => {
     </div>
   )
 
-  if(isLoaded && !isSignedIn) return (
-    <div className=''>
-      <h1>You should log in</h1>
-    </div>
+  if(isLoaded && !isSignedIn) 
+    return (
+      <div className=''>
+        <h1>You should log in</h1>
+      </div>
   )
+
+  const handleSubmt=(e)=>{
+    e.preventDefault()
+  }
 
   return (
     <div className='md:h-[calc(100vh-80px)] h-[calc(100vh-64px)] flex flex-col gap-6'>
 
       <h1 className='text-xl font-semibold'>Create a new post</h1>
-      <form action="" className='flex flex-col gap-6 flex-1 mb-4'>
+      <form onSubmit={handleSubmt} action="" className='flex flex-col gap-6 flex-1 mb-4'>
         {/* CONTENT */}
         <button className='bg-blue-800 w-max px-4 py-2 shadow-lg rounded-3xl text-white'>Add a cover Image</button>
 
