@@ -1,7 +1,7 @@
-# 📝 Full Stack Blog Website
+# 📝 DevDiaries - Full Stack Blog Website
 
 ## 🚀 Introduction
-Welcome to my **Full Stack Blog Website**! This project is designed to provide a seamless blogging experience, allowing users to write, edit, and share their thoughts in a beautifully crafted environment. The **frontend is built with React and TailwindCSS**, while the **backend is powered by Node.js, Express, and MongoDB**.
+Welcome to my **DevDiaries- A Full Stack Blog Website**! This project is designed to provide a seamless blogging experience, allowing users to write, edit, and share their thoughts in a beautifully crafted environment. The **frontend is built with React and TailwindCSS**, while the **backend is powered by Node.js, Express, and MongoDB**.
 
 ## 🎯 Features
 - ✅ **Responsive Design** using **TailwindCSS** 🎨
