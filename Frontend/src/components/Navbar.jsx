@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {IKImage} from 'imagekitio-react';
 import Image from './Image.jsx';
 import { Link } from 'react-router-dom';
-import { UserButton, SignedIn, SignedOut } from '@clerk/clerk-react';
+import { UserButton, SignedIn, SignedOut, useAuth } from '@clerk/clerk-react';
 const Navbar = () => {
-    const [open, setOpen]=useState(false)
+    const [open, setOpen]=useState(false);
+    
   return (
     <div>
         <div className='w-full h-16 md:h-20 flex justify-between items-center'>
             {/* LOGO */}
-            <Link to="/" className="w-8 h-8 text-2xl font-bold">
-                {/* <Image src=""  w={32} h={32} alt="LOGO" /> */}
-                <span>BlOg</span>
+            <Link to="/" className="w-8 h-8 text-2xl font-bold flex gap-2">
+                {/* <Image src="../assets/Icons/LOGO.png"  w={32} h={32} alt="LOGO" /> */}
+                <img src="../../public/LOGO.png" alt="LOGO" width="32" height="32" />
+                <span className='logo'>DevDiaries</span>
             </Link>
             {/* MOBILE MENU */}
             <div className='md:hidden'>

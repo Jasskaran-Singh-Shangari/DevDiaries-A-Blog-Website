@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&display=swap');
+
 body{
   background-color: #e6e6ff;
   font-family: "Montserrat" , Poppins, "sans-serif";
   width: 100vw;
   overflow-x: hidden;
+}
+
+.logo{
+  /* font-family: "Playwrite MX Guides", cursive; */
 }
 .animatedButton{
   animation-duration: 10000ms;

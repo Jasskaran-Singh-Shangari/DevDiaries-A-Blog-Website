@@ -7,8 +7,10 @@ import { useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify';
 import { IKContext, IKUpload } from 'imagekitio-react';
 import Upload from '../components/Upload';
+import axios from "axios"
+import { useAuth } from '@clerk/clerk-react';
 const Write = () => {
-
+  const {getToken} = useAuth()
   const [value, setValue]=useState("")
   const [cover, setCover]=useState("")
   const [progress, setProgress]=useState(0)
@@ -17,22 +19,22 @@ const Write = () => {
   const navigate=useNavigate()
   const mutation = useMutation({
     mutationFn: async (newPost) => {
-      // const token=await getToken()
-      return axios.post(`${import.meta.env.VITE_API_URL}/posts`,newPost), 
+      const token=await getToken()
+      return axios.post(`${import.meta.env.VITE_API_URL}/posts`,newPost, 
       {
         headers:{
           Authorization: `Bearer ${token}`
         }
-      }
+      })
     },
     onSuccess:(res)=>{
       toast.success("Post successfully created...")
       navigate(`/${res.data.slug}`)
     }
-  })
+  }) 
 
   useEffect(()=>{
-    img && setValue(prev=>prev+`<p><image src="${img.url}"/></p>`)
+    img && setValue(prev=>prev+`<p><img src="${img.url}" /></p>`)
   }, [img])
   useEffect(()=>{
     vid && setValue(prev=>prev + `<p><iframe src="${vid.url}" className="ql-video" /></p>`)
@@ -76,7 +78,7 @@ const Write = () => {
       <form onSubmit={handleSubmt} action="" className='flex flex-col gap-6 flex-1 mb-4'>
         {/* CONTENT */}
         <Upload type="image" setProgress={setProgress} setData={setCover}>
-          <button className='bg-blue-800 w-max px-4 py-2 shadow-lg rounded-3xl text-white'>Add a cover Image</button>
+          <button type="button" className='bg-blue-800 w-max px-4 py-2 shadow-lg rounded-3xl text-white pointer-cursor'>Add a cover Image</button>
         </Upload>
         
 

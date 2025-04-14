@@ -1,17 +1,22 @@
 import express from "express"
 import cors from "cors"
+import { clerkMiddleware } from '@clerk/express'
+
 export const app=express()
+app.use(clerkMiddleware())
+
 
 // MIDDLEWARES  
 
 app.use(cors(process.env.CLIENT_URL))
+app.use("/webhooks", webhookRouter)
 app.use(express.json())
 app.use((error, req, res, next)=>{
     res.json({
         message: error.message || "Something went wrong",
         status: error.status,
         stack:error.stack
-    }).status(error.status)
+    })
 })
 // ALLOWS CROSS ORIGIN REQUESTS
 app.use(function(req, res, next) {
@@ -31,4 +36,15 @@ import webhookRouter from "./routes/webhook.route.js"
 app.use("/users", userRouter)
 app.use("/posts", postRouter)
 app.use("/comments", commentRouter)
-app.use("/webhooks", webhookRouter)
+
+
+
+//GLOBAL ERROR HANDLER
+
+app.use((error, req, res, next)=>{
+  res.json({
+    message: error.message || "Something went wrong...",
+    status: error.status,
+    stack: error.stack
+  })
+})

@@ -1,12 +1,12 @@
 import mongoose, {Schema} from "mongoose"
 
 const postSchema=new Schema({
-    author:{
+    user:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true
     },
-    coverImage:{
+    img:{
         type: String,
         required: false,
         unique: false,
@@ -20,7 +20,7 @@ const postSchema=new Schema({
         type: String,
         required: true
     },
-    description: {
+    desc: {
         type: String,
         required: true
     }, 

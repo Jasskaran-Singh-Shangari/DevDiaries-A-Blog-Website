@@ -34,7 +34,7 @@ const Upload = ({
     const onSuccess=(res)=>{
         console.log(res)
         setData(res)
-        toast.success("Image uploaded successfully")
+        toast.success(`Uploaded Successfully`)
     }
     const onUploadProgress=(progress)=>{
         console.log(progress)

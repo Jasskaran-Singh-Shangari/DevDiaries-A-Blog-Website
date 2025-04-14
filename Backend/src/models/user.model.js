@@ -1,6 +1,11 @@
 import mongoose, {Schema} from "mongoose"
 
 const userSchema= new Schema({
+    clerkUserId:{
+        type: String,
+        required: true,
+        unique: true
+    },
     username:{
         type: String,
         required: true,
@@ -14,10 +19,12 @@ const userSchema= new Schema({
     },
     password:{
         type: String,
-        required: true
+        required: false
     },
     avatar:{
-        type: String
+        type: String,
+        required: true,
+        unique: true
     },
     savedPosts:{
         type: [String],
